@@ -1,1 +1,14 @@
-
+---
+# Образец комментария, чтобы не забыть синтаксис
+name: Aleksandr Patrikeev
+job: QA Engineer
+level: junior
+email: argon06@gmail.com
+description: |
+  Студент Hexlet
+skills:
+  - Функциональное тестирование
+  - Написание багрепортов
+  - Ручное тестирование
+  - HTML, CSS
+  - Опыть работы с MySQL, PHP, Apache
