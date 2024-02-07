@@ -35,9 +35,9 @@
   prerequisites:
       Открыта главная страница
   test-data: |
-      -
+      no data
   steps:
-      - 
+      no data 
   expected-result: |
       Элементы сайта не перекрывают друг друга
     
@@ -78,7 +78,7 @@
   prerequisites:
       Открыта главная страница
   test-data: |
-      -
+      no data
   steps:
       - Открываем главную страницу сайта в chrome
       - Весь основной функционал доступен и работает ожидаемо
