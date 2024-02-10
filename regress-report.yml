@@ -1,27 +1,28 @@
 ---
-- summary: |
-      Поиск товаров через поисковую строку
-  status: pass
+test-cases:
+      - summary: |
+            Поиск товаров через поисковую строку
+        status: pass
 
-- summary: |
-      Проверка работы фильтров
-  status: fail
-
-- summary: |
-      Проверка наличия мобильной версии магазина
-  status: pass
-
-- summary: |
-      Проверка  ототбражения карточки товара
-  status: pass
- 
-- summary: |
-      Проверка работы корзины
-  status: fail
-  
-- summary: |
-      Проверка совместимости сайта с актуальными версиями chrome, edge, firefox, safari
-  status: pass	
+      - summary: |
+            Проверка работы фильтров
+        status: fail
+      
+      - summary: |
+            Проверка наличия мобильной версии магазина
+        status: pass
+      
+      - summary: |
+            Проверка  ототбражения карточки товара
+        status: pass
+       
+      - summary: |
+            Проверка работы корзины
+        status: fail
+        
+      - summary: |
+            Проверка совместимости сайта с актуальными версиями chrome, edge, firefox, safari
+        status: pass	
 
 bugreports:
   - summary: |
@@ -50,4 +51,3 @@ bugreports:
       Открывается модальное окно с подтверждением добавления товара в корзину
   actual-result: |
       Товар перемещается в корзину без открытия модального окна
-      
