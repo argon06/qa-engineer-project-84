@@ -37,8 +37,7 @@
   test-data: |
       no data
   steps:
-      no data
-      no data
+      - no data
   expected-result: |
       Элементы сайта не перекрывают друг друга
     
