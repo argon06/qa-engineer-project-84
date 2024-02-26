@@ -39,8 +39,8 @@ bugreports:
       Пользователь видит товар iphone 9
     actual-result: |
       На странице отображаются все товары без учета установленных фильтров
-      
-- summary: |
+
+  - summary: |
       Отсутсвует модальное окно после добавления товара в корзину
   environment: |
       https://hexlet-products-store.vercel.app/
