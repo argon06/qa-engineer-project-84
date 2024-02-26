@@ -42,12 +42,12 @@ bugreports:
 
   - summary: |
       Отсутсвует модальное окно после добавления товара в корзину
-  environment: |
+    environment: |
       https://hexlet-products-store.vercel.app/
       version 1
-  steps-to-reproduce: |
+    steps-to-reproduce: |
       1. Нажимаем на кнопку "В корзину"
-  expected-result: |
+    expected-result: |
       Открывается модальное окно с подтверждением добавления товара в корзину
-  actual-result: |
+    actual-result: |
       Товар перемещается в корзину без открытия модального окна
