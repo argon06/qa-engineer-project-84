@@ -1,53 +1,101 @@
 ---
 test-cases:
       - summary: |
-            Поиск товаров через поисковую строку
+            Поиск товаров по ключевому слову
         status: pass
 
-      - summary: |
-            Проверка работы фильтров
-        status: fail
-      
       - summary: |
             Проверка наличия мобильной версии магазина
         status: pass
-      
+
       - summary: |
             Проверка  ототбражения карточки товара
         status: pass
-       
+         
       - summary: |
-            Проверка работы корзины
-        status: fail
-        
+            Проверка добавления товара в корзину
+        status: pass
+          
       - summary: |
             Проверка совместимости сайта с актуальными версиями chrome, edge, firefox, safari
-        status: pass	
+        status: pass
+
+      - summary: |
+            Проверка работы фильтра по категориям
+        status: pass
+          
+      - summary: |
+            Проверка работы фильтра по бренду
+        status: pass
+          
+      - summary: |
+            Проверка работы фильтра по наличию
+        status: fail
+          
+      - summary: |
+            Проверка работы фильтра по цене
+        status: fail
+          
+      - summary: |
+            Проверка оформления заказа
+        status: fail
+          
+      - summary: |
+            Проверка смены языка магазина на другой язык
+        status: fail	
 
 bugreports:
   - summary: |
-      Фильтр по цене отменяет работу предыдущих фильтров
+      Снятие чекбокс фильтра "В наличии" показывает тот же перечень товаров
     environment: |
-      https://hexlet-products-store.vercel.app/
-      version 1
+      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+      version 2
     steps-to-reproduce: |
-      - Полный перечень шагов для воспроизведения и описание, на каком шаге произошла ошибка    - Устанавливаем фильтр Category
-      - Устанавливаем фильтр Brand
-      - Чекбокс In Stock установлен по умолчанию
-      - Устанавливаем фильтр Price
+      - Снимаем чекбокс "В наличии"
     expected-result: |
-      Пользователь видит товар iphone 9
+      Пользователь должен видеть другой список товаров
     actual-result: |
-      На странице отображаются все товары без учета установленных фильтров
+      На странице отображается тот же перечень товаров
 
   - summary: |
-      Отсутсвует модальное окно после добавления товара в корзину
+      Фильтр "Цена" принимает отрицательные значения
     environment: |
-      https://hexlet-products-store.vercel.app/
-      version 1
+      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+      version 2
     steps-to-reproduce: |
-      1. Нажимаем на кнопку "В корзину"
+      - Нажимаем стрелочку "Вниз" в поле "До" фильтра "Цена"
     expected-result: |
-      Открывается модальное окно с подтверждением добавления товара в корзину
+      Цифра не может быть отрицательной
     actual-result: |
-      Товар перемещается в корзину без открытия модального окна
+      Цифра отрицательная
+  
+  - summary: |
+      Ошибка 500 после оформления заказа
+    environment: |
+      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+      version 2
+    steps-to-reproduce: |
+      - Заходим на главную страницу  https://hexlet-products-store.vercel.app/
+      - Добавляем любой товар в корзину
+      - Переходим в корзину
+      - Запускаем "Dev Tools"
+      - Переходим на вкладку Сеть
+      - Нажимаем на кнопку "Оформить заказ"
+      - В открывшемся модальном окне нажимаем "Закрыть"
+    expected-result: |
+      Запрос отправлен успешно
+    actual-result: |
+      В консоле ошибка 500
+      
+  - summary: |
+      Description не переведен на русский язык
+    environment: |
+      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+      version 2
+    steps-to-reproduce: |
+      - Нажимаем кнопку Language
+      - Выбираем Russian
+    expected-result: |
+      Весь контент переведен на русский язык
+    actual-result: |
+      Текст в Description остался на английском
